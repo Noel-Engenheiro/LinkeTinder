@@ -3,6 +3,32 @@ var list = document.querySelector("#list");
 var form = document.getElementById("cadastro-usuario");
 var input = document.querySelector("#cadastro");
 var candidato = loadCandidato();
+
+let regexEmailCandidato = new RegExp('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/');
+
+let regexNomeCandidato = ('/(á-úa-zA-ZÁ-Ú?\s)/');
+
+let regexCPF= ('/\d{3}\.\d{3}\.\d{3}\-\d{2}/');
+
+let regexNumeroTelefonico= ('/^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/');
+
+let regexLinkDoLinkedin= ('/http(s)?:\/\/([\w]+\.)?linkedin\.com\/in\/[A-z0-9_-]+\/?/');
+
+let regexTagsCandidato= ('/@"\<([\/?\s?\w]+)\>/');
+
+let regexEmailCandidato = new RegExp('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/');
+
+let regexNomeCandidato = ('/(á-úa-zA-ZÁ-Ú?\s)/');
+
+let regexCPF= ('/\d{3}\.\d{3}\.\d{3}\-\d{2}/');
+
+let regexNumeroTelefonico= ('/^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/');
+
+let regexLinkDoLinkedin= ('/http(s)?:\/\/([\w]+\.)?linkedin\.com\/in\/[A-z0-9_-]+\/?/');
+
+let regexTagsCandidato= ('/@"\<([\/?\s?\w]+)\>/');
+
+
 candidato.forEach(addListItem);
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", function (e) {
     e.preventDefault();
