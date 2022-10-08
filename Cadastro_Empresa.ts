@@ -2,6 +2,18 @@ var list = document.querySelector("#list");
 var form = document.getElementById("cadastro-usuario");
 var input = document.querySelector("#cadastro");
 var candidato = loadEmpresa();
+
+let regexCnpj= ('/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/');
+
+let regexNomeEmpresa = ('/(á-úa-zA-ZÁ-Ú?\s)/');
+
+let regexEmailEmpresa = new RegExp('/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/');
+
+let regexCep = new RegExp('/^[0-9]{5}-[0-9]{3}$/');
+
+let regexTagsEmpresa= ('/@"\<([\/?\s?\w]+)\>/');
+
+
 candidato.forEach(addListItem);
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", function (e) {
     e.preventDefault();
