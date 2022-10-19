@@ -75,16 +75,21 @@ class TabelaDeVagas {
     }
     public static void inserir (){
         println("Informe o código da vaga : ");
+        String codigo = teclado.nextLine();
         println("Informe o nome da vaga  : ");
-        println("Informe a descrição pessoal : ");
-        println("Informe as competências exigidas : ");
-        println("Informe o local da vaga : ");
-
         String nome = teclado.nextLine();
+        println("Informe a descrição pessoal : ");
+        String descricao = teclado.nextLine();
+        println("Informe as competências exigidas : ");
+        String competencia = teclado.nextLine();
+        println("Informe o local da vaga : ");
+        String local = teclado.nextLine();
+
+
 
         String INSERIR = "INSERT INTO quantidade_Vagas (código, nome, descrição, competências, local) VALUE (?, ?, ?, ?, ?)";
         try{
-            Connection.conn = conectar();
+            Connection conn = conectar();
             PreparedStatement salvar = conn.prepareStatement(INSERIR);
 
             salvar.setString(1, codigo);
